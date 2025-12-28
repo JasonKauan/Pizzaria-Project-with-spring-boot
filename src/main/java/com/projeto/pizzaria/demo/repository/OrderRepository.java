@@ -1,0 +1,9 @@
+package com.projeto.pizzaria.demo.repository;
+
+import com.projeto.pizzaria.demo.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.UUID;
+
+public interface OrderRepository extends JpaRepository<User, UUID> {
+}
