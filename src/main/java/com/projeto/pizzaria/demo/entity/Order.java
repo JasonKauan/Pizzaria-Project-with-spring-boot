@@ -13,7 +13,7 @@ import java.util.UUID;
 public class Order {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
     @Enumerated(EnumType.STRING)
@@ -24,6 +24,8 @@ public class Order {
     private LocalDateTime createAt;
     private LocalDateTime estimatedDeliveryTime;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
 

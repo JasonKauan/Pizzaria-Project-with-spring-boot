@@ -6,6 +6,7 @@ import java.util.UUID;
 
 public class CustomerInfo {
 
+
     private UUID id;
 
     private String phone;
