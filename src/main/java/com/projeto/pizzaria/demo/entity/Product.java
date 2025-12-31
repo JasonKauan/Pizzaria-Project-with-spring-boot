@@ -17,7 +17,7 @@ public class Product {
     private String name;
     private String description;
     private BigDecimal price;
-    private String caregory;
+    private String category;
     private Boolean active = true;
 
     // Getters and Setters
@@ -47,12 +47,12 @@ public class Product {
         this.price = price;
     }
 
-    public String getCaregory() {
-        return caregory;
+    public String getCategory() {
+        return category;
     }
 
-    public void setCaregory(String caregory) {
-        this.caregory = caregory;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getDescription() {
