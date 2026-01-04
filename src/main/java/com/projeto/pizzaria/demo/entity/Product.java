@@ -20,6 +20,13 @@ public class Product {
     private String category;
     private Boolean active = true;
 
+    // Constructors
+
+
+    public Product() {
+    }
+
+
     // Getters and Setters
 
 

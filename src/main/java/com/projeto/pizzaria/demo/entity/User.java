@@ -21,6 +21,11 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    // Constructors
+
+    public User() {
+    }
+
     // Getters and Setters
 
 
