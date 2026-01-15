@@ -46,6 +46,21 @@ public class ProductService {
         existingProduct.setPrice(product.getPrice());
         return repository.save(existingProduct);
     }
+    // método para atualizar apenas algum(s) dado(s) do produto
+    @Transactional
+    public Product PatchProduct(UUID id ,Product product){
+        Product existingProduct = repository.findById(id).orElseThrow(()-> new RuntimeException("Product not found"));
+        if (product.getName() != null) {
+            existingProduct.setName(product.getName());
+        }
+        if (product.getDescription() != null) {
+            existingProduct.setDescription(product.getDescription());
+        }
+        if (product.getPrice() != null) {
+            existingProduct.setPrice(product.getPrice());
+        }
+        return repository.save(existingProduct);
+    }
 
     public void deleteProduct(UUID id){
         Product existingProduct = repository.findById(id).orElseThrow(()-> new RuntimeException("Product not found"));
