@@ -29,20 +29,12 @@ public class User {
     // Getters and Setters
 
 
-    public Role getRole() {
-        return role;
+    public UUID getId() {
+        return id;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -53,11 +45,19 @@ public class User {
         this.username = username;
     }
 
-    public UUID getId() {
-        return id;
+    public String getPassword() {
+        return password;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }
