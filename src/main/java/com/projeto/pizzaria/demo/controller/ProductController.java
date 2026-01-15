@@ -16,6 +16,7 @@ public class ProductController {
     @Autowired
     private ProductService service;
 
+    @GetMapping
     public ResponseEntity<List<Product>> getAllProducts(){
         return ResponseEntity.ok().body(service.findAllProducts());
     }
@@ -26,20 +27,24 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponseEntity<Product> createProduct(Product product){
+    public ResponseEntity<Product> createProduct(@RequestBody Product product){
         return ResponseEntity.ok().body(service.saveProduct(product));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Product> updateProduct(@PathVariable UUID id, @RequestBody Product product) {
         return ResponseEntity.ok().body(service.updateProduct(id, product));
-
     }
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProduct(@PathVariable UUID id){
         service.deleteProduct(id);
         return ResponseEntity.noContent().build();
-}
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<Product> patchProduct(@PathVariable UUID id, @RequestBody Product product) {
+        return ResponseEntity.ok().body(service.PatchProduct(id, product));
+    }
 }
 
 
