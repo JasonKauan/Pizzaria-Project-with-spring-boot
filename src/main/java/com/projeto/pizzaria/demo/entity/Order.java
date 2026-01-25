@@ -25,7 +25,7 @@ public class Order {
     private LocalDateTime estimatedDeliveryTime;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     // Constructors
@@ -82,6 +82,4 @@ public class Order {
         this.user = user;
     }
 
-    public void setUser(UUID id) {
-    }
 }

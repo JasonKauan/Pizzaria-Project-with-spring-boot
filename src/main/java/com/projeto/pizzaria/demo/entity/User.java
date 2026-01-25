@@ -18,16 +18,29 @@ public class User {
     private String username;
     private String password;
 
+    private boolean profileComplete;
+
+
     @Enumerated(EnumType.STRING)
     private Role role;
 
+
     // Constructors
+
+    public boolean isProfileComplete() {
+        return profileComplete;
+    }
+
 
     public User() {
     }
 
     // Getters and Setters
 
+
+    public void setProfileComplete(boolean profileComplete) {
+        this.profileComplete = profileComplete;
+    }
 
     public UUID getId() {
         return id;

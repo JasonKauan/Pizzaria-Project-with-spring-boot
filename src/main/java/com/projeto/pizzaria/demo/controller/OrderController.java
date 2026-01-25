@@ -21,7 +21,7 @@ public class OrderController {
     @PostMapping
     public ResponseEntity<Order> createOrder(@RequestBody CreateOrderRequest request) {
         Order order = orderService.createOrder(
-               request.getUserId(),
+                request.getUserId(),
                 request.getTotal()
         );
         return ResponseEntity.ok(order);
@@ -39,9 +39,16 @@ public class OrderController {
         Order order = orderService.updateOrderStatus(orderId, request.getStatus());
         return ResponseEntity.ok(order);
 
-
-
-
     }
+
+    @PatchMapping("/{id}/status")
+    public ResponseEntity<Order> updateStatus(
+            @PathVariable UUID id,
+            @RequestBody UpdateOrderStatusRequest request
+    ) {
+        Order order = orderService.updateOrderStatus(id, request.getStatus());
+        return ResponseEntity.ok(order);
+    }
+
 
 }
