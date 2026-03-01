@@ -16,28 +16,28 @@ public class ProductService {
     @Autowired
     private ProductRepository repository;
 
-    //método para buscar todos os produtos
+    //find al products
     public List<Product> findAllProducts(){
         return repository.findAll();
     }
 
 
-    //método para buscar produto por id
+    // find product by id
     public Product findByid(UUID id){
         return repository.findById(id).orElseThrow(()-> new RuntimeException("Product not found"));
     }
 
 
-    //método para salvar produto com validação de nome
+    // criar um novo produto
     @Transactional
     public Product saveProduct(Product product){
         if (product.getName().length()<3){
-            throw new RuntimeException("Nome do produto muito curto! tente colocar um nome com mais de 3 caracteres.");
+            throw new RuntimeException("product name is very short, try a large number of characters.");
         }
         return repository.save(product);
     }
 
-    //método para atualizar o produto
+    //update product
     @Transactional
     public Product updateProduct(UUID id ,Product product){
         Product existingProduct = repository.findById(id).orElseThrow(()-> new RuntimeException("Product not found"));
@@ -46,7 +46,7 @@ public class ProductService {
         existingProduct.setPrice(product.getPrice());
         return repository.save(existingProduct);
     }
-    // método para atualizar apenas algum(s) dado(s) do produto
+    //update partial product
     @Transactional
     public Product PatchProduct(UUID id ,Product product){
         Product existingProduct = repository.findById(id).orElseThrow(()-> new RuntimeException("Product not found"));
@@ -56,12 +56,14 @@ public class ProductService {
         if (product.getDescription() != null) {
             existingProduct.setDescription(product.getDescription());
         }
+
         if (product.getPrice() != null) {
             existingProduct.setPrice(product.getPrice());
         }
         return repository.save(existingProduct);
     }
 
+    //deletar um produto
     public void deleteProduct(UUID id){
         Product existingProduct = repository.findById(id).orElseThrow(()-> new RuntimeException("Product not found"));
         repository.delete(existingProduct);
