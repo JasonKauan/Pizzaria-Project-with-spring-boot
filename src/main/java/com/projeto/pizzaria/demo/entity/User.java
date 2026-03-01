@@ -18,7 +18,8 @@ public class User {
     private String username;
     private String password;
 
-    private boolean profileComplete;
+    @Column(nullable = false)
+    private boolean profileComplete = false;
 
 
     @Enumerated(EnumType.STRING)
