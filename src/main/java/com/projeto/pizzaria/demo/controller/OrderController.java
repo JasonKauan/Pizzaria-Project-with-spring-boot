@@ -2,8 +2,9 @@ package com.projeto.pizzaria.demo.controller;
 
 import com.projeto.pizzaria.demo.DTO.CreateOrderRequest;
 import com.projeto.pizzaria.demo.DTO.UpdateOrderStatusRequest;
-import com.projeto.pizzaria.demo.entity.Order;
+import com.projeto.pizzaria.demo.entities.Order;
 import com.projeto.pizzaria.demo.service.OrderService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +20,7 @@ public class OrderController {
         this.orderService = orderService;
     }
     @PostMapping
-    public ResponseEntity<Order> createOrder(@RequestBody CreateOrderRequest request) {
+    public ResponseEntity<Order> createOrder(@RequestBody @Valid CreateOrderRequest request) {
         Order order = orderService.createOrder(request, java.math.BigDecimal.ZERO);
         return ResponseEntity.ok(order);
     }
@@ -32,7 +33,7 @@ public class OrderController {
     }
 
     @PutMapping("/{orderId}/status")
-    public ResponseEntity<Order> updateOrderStatus(@PathVariable UUID orderId, @RequestBody UpdateOrderStatusRequest request) {
+    public ResponseEntity<Order> updateOrderStatus(@PathVariable UUID orderId, @RequestBody @Valid UpdateOrderStatusRequest request) {
         Order order = orderService.updateOrderStatus(orderId, request.getStatus());
         return ResponseEntity.ok(order);
 
@@ -41,11 +42,12 @@ public class OrderController {
     @PatchMapping("/{id}/status")
     public ResponseEntity<Order> updateStatus(
             @PathVariable UUID id,
-            @RequestBody UpdateOrderStatusRequest request
+            @RequestBody @Valid UpdateOrderStatusRequest request
     ) {
         Order order = orderService.updateOrderStatus(id, request.getStatus());
         return ResponseEntity.ok(order);
     }
+
 
 
 }

@@ -1,7 +1,7 @@
 package com.projeto.pizzaria.demo.repository;
 
-import com.projeto.pizzaria.demo.entity.Order;
-import com.projeto.pizzaria.demo.entity.OrderItem;
+import com.projeto.pizzaria.demo.entities.Order;
+import com.projeto.pizzaria.demo.entities.OrderItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

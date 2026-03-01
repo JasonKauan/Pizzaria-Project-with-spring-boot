@@ -1,7 +1,7 @@
 package com.projeto.pizzaria.demo.service;
 
 
-import com.projeto.pizzaria.demo.entity.Product;
+import com.projeto.pizzaria.demo.entities.Product;
 import com.projeto.pizzaria.demo.repository.ProductRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;

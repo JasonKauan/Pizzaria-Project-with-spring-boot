@@ -1,6 +1,6 @@
 package com.projeto.pizzaria.demo.repository;
 
-import com.projeto.pizzaria.demo.entity.Product;
+import com.projeto.pizzaria.demo.entities.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;

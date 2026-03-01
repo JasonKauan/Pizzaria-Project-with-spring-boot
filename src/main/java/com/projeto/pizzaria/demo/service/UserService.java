@@ -1,6 +1,6 @@
 package com.projeto.pizzaria.demo.service;
 
-import com.projeto.pizzaria.demo.entity.User;
+import com.projeto.pizzaria.demo.entities.User;
 import com.projeto.pizzaria.demo.repository.UserRepository;
 import org.springframework.stereotype.Service;
 

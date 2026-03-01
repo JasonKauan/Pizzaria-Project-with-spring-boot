@@ -1,6 +1,6 @@
 package com.projeto.pizzaria.demo.controller;
 
-import com.projeto.pizzaria.demo.entity.Product;
+import com.projeto.pizzaria.demo.entities.Product;
 import com.projeto.pizzaria.demo.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

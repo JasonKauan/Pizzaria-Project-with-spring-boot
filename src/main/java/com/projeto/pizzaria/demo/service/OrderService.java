@@ -5,10 +5,10 @@ import java.util.UUID;
 
 import com.projeto.pizzaria.demo.DTO.CreateOrderRequest;
 import com.projeto.pizzaria.demo.DTO.OrderItemRequest;
-import com.projeto.pizzaria.demo.entity.Order;
-import com.projeto.pizzaria.demo.entity.OrderItem;
-import com.projeto.pizzaria.demo.entity.Product;
-import com.projeto.pizzaria.demo.entity.User;
+import com.projeto.pizzaria.demo.entities.Order;
+import com.projeto.pizzaria.demo.entities.OrderItem;
+import com.projeto.pizzaria.demo.entities.Product;
+import com.projeto.pizzaria.demo.entities.User;
 import com.projeto.pizzaria.demo.enums.OrderStatus;
 import com.projeto.pizzaria.demo.repository.OrderRepository;
 import com.projeto.pizzaria.demo.repository.UserRepository;
