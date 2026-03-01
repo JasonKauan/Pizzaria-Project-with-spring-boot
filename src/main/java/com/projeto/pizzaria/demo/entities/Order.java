@@ -1,4 +1,4 @@
-package com.projeto.pizzaria.demo.entity;
+package com.projeto.pizzaria.demo.entities;
 
 
 import com.projeto.pizzaria.demo.enums.OrderStatus;
@@ -8,7 +8,6 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.UUID;
 
 @Entity
